@@ -1,9 +1,10 @@
 {
   "framework": "vite",
+  "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://SEU_APP_RENDER.onrender.com/api/$1" },
+    { "source": "/api/(.*)", "destination": "https://rodxlr.pythonanywhere.com/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
