@@ -16,8 +16,20 @@ class Settings(BaseSettings):
     APP_ENV: str = "development"
 
     # Database
-    DATABASE_URL: str = "postgresql+asyncpg://localhost:5432/jobfinder"
-    DATABASE_URL_SYNC: str = "postgresql://localhost:5432/jobfinder"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./jobfinder.db"
+    DATABASE_URL_SYNC: str = "sqlite:///./jobfinder.db"
+
+    @property
+    def database_url_async(self) -> str:
+        url = self.DATABASE_URL
+        if url.startswith("postgresql://") and "+asyncpg" not in url:
+            url = url.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return url
+
+    @property
+    def database_url_sync(self) -> str:
+        url = self.DATABASE_URL_SYNC
+        return url
 
     # Security (future)
     SECRET_KEY: str = "super-secret-key-change-in-production"
