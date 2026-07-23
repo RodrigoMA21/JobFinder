@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+backend/.env
+
+# Database
+*.db
+*.sqlite3
+
+# Tests
+backend/test_*.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Alembic
+backend/alembic/versions/*.pyc
+
+# Frontend
+frontend/dist/
+frontend/node_modules/
+frontend/.tsbuildinfo
