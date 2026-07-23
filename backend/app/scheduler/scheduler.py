@@ -21,13 +21,14 @@ async def sync_jobs_job():
 def create_scheduler() -> AsyncIOScheduler:
     scheduler = AsyncIOScheduler()
 
+    first_run = None if settings.APP_ENV == "production" else datetime.now()
     scheduler.add_job(
         sync_jobs_job,
         "interval",
         hours=settings.SYNC_INTERVAL_HOURS,
         id="sync_jobs",
         name="Sync jobs from external APIs",
-        next_run_time=datetime.now(),
+        next_run_time=first_run,
         misfire_grace_time=3600,
     )
 
