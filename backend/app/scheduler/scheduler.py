@@ -4,13 +4,14 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from loguru import logger
 
 from app.core.config import settings
-from app.scrapers.adzuna import AdzunaScraper
-from app.scrapers.findwork import FindworkScraper
-from app.scrapers.remotive import RemotiveScraper
-from app.services.sync_service import SyncService
 
 
 async def sync_jobs_job():
+    from app.scrapers.adzuna import AdzunaScraper
+    from app.scrapers.findwork import FindworkScraper
+    from app.scrapers.remotive import RemotiveScraper
+    from app.services.sync_service import SyncService
+
     logger.info("Starting scheduled job synchronization")
     scrapers = [RemotiveScraper(), AdzunaScraper(), FindworkScraper()]
     service = SyncService(scrapers)

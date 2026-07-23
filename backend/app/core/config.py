@@ -57,5 +57,10 @@ class Settings(BaseSettings):
     # Logging
     LOG_LEVEL: str = "INFO"
 
+    @property
+    def IS_PYTHONANYWHERE(self) -> bool:
+        import os
+        return os.environ.get("PYTHONANYWHERE_DOMAIN") is not None or os.environ.get("PYTHONANYWHERE") == "1"
+
 
 settings = Settings()

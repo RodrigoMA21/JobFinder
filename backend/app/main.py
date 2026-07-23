@@ -11,9 +11,6 @@ from app.core.database import Base, engine
 from app.core.exceptions import AppException
 from app.core.logging import setup_logging
 from app.models import *  # noqa: F401,F403
-from app.scheduler.scheduler import create_scheduler
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     setup_logging()
@@ -23,14 +20,20 @@ async def lifespan(app: FastAPI):
         await conn.run_sync(Base.metadata.create_all)
     logger.info("Database tables created")
 
-    scheduler = create_scheduler()
-    scheduler.start()
-    logger.info("Scheduler started")
+    scheduler = None
+    if not settings.IS_PYTHONANYWHERE:
+        from app.scheduler.scheduler import create_scheduler
+        scheduler = create_scheduler()
+        scheduler.start()
+        logger.info("Scheduler started")
+    else:
+        logger.info("PythonAnywhere detected — scheduler disabled")
 
     yield
 
-    scheduler.shutdown(wait=False)
-    logger.info("Scheduler stopped")
+    if scheduler:
+        scheduler.shutdown(wait=False)
+        logger.info("Scheduler stopped")
 
 
 app = FastAPI(
