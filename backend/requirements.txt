@@ -1,33 +1,33 @@
 # FastAPI & Server
-fastapi==0.111.0
-uvicorn[standard]==0.30.1
-pydantic==2.7.4
-pydantic-settings==2.3.4
-python-multipart==0.0.9
+fastapi>=0.111.0,<1
+uvicorn[standard]>=0.30.1,<1
+pydantic>=2.9.0,<3
+pydantic-settings>=2.3.4,<3
+python-multipart>=0.0.9,<1
 
 # Database
-sqlalchemy[asyncio]==2.0.31
-asyncpg==0.29.0
-alembic==1.13.1
+sqlalchemy[asyncio]>=2.0.31,<3
+alembic>=1.13.1,<2
 
 # Auth (future use)
-passlib[bcrypt]==1.7.4
-python-jose[cryptography]==3.3.0
+passlib[bcrypt]>=1.7.4,<2
+python-jose[cryptography]>=3.3.0,<4
 
 # HTTP & Scraping
-httpx==0.27.0
+httpx>=0.27.0,<1
 
 # Scheduler
-apscheduler==3.10.4
+apscheduler>=3.10.4,<4
 
 # Logging
-loguru==0.7.2
+loguru>=0.7.2,<1
 
 # Utils
-python-dotenv==1.0.1
-pytz==2024.1
+python-dotenv>=1.0.1,<2
+a2wsgi>=1.10.1,<2
+pytz>=2024.1
 
 # Tests
-pytest==8.2.2
-pytest-asyncio==0.23.7
-aiosqlite==0.20.0
+pytest>=8.2.2,<9
+pytest-asyncio>=0.23.7,<1
+aiosqlite>=0.20.0,<1
