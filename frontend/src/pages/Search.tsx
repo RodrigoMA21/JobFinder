@@ -16,6 +16,10 @@ export function Search() {
     for (const [key, value] of searchParams.entries()) {
       (initial as Record<string, string>)[key] = value;
     }
+    if (Object.keys(initial).length === 0) {
+      initial.page = 1;
+      initial.per_page = 20;
+    }
     return initial;
   });
 

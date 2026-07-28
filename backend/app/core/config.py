@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     SYNC_INTERVAL_HOURS: int = 6
 
     # CORS
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000,https://jobfinder-rodrigoma21.vercel.app"
 
     @property
     def cors_origins_list(self) -> List[str]:

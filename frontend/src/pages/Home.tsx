@@ -22,7 +22,7 @@ export function Home() {
               to="/search"
               className="rounded-lg bg-[var(--color-primary)] px-8 py-3 text-sm font-semibold text-white hover:bg-[var(--color-primary-hover)] transition-colors"
             >
-              Buscar Vagas
+              Ver Todas as Vagas
             </Link>
             <Link
               to="/search?modality=remote"
@@ -41,7 +41,7 @@ export function Home() {
             to="/search"
             className="text-sm font-medium text-[var(--color-primary)] hover:underline"
           >
-            Ver todas →
+            Ver Todas as Vagas →
           </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
