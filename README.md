@@ -122,40 +122,27 @@ JobFinder/
 
 ---
 
-# 💻 Como executar
+# 🌐 Acessar
+
+O JobFinder está disponível online:
+
+- **Frontend:** [https://job-finder-seven-rust.vercel.app](https://job-finder-seven-rust.vercel.app)
+- **Backend (API):** [https://rodxlr.pythonanywhere.com/api/v1/docs](https://rodxlr.pythonanywhere.com/api/v1/docs)
+
+---
+
+# 💻 Desenvolvimento local
 
 ## Backend
-
-Clone o repositório
 
 ```bash
 git clone https://github.com/RodrigoMA21/JobFinder.git
 cd JobFinder/backend
-```
-
-Crie e ative o virtualenv
-
-```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
-```
-
-Instale as dependências
-
-```bash
 pip install -r requirements.txt
-```
-
-Copie e configure o arquivo .env
-
-```bash
 cp .env.example .env
-```
-
-Inicie o servidor
-
-```bash
 uvicorn app.main:app --reload
 ```
 
