@@ -171,18 +171,6 @@ O build será gerado na pasta `dist/`.
 
 ---
 
-# 🔮 Próximas melhorias
-
-- [ ] Autenticação de usuários
-- [ ] Salvamento de vagas favoritas
-- [ ] Alertas de novas vagas por e-mail
-- [ ] Integração com LinkedIn e Indeed
-- [ ] Modo escuro
-- [ ] Testes automatizados (pytest + vitest)
-- [ ] Pipeline CI/CD com GitHub Actions
-
----
-
 # 👨‍💻 Autor
 
 **Rodrigo Mayer Alves**
